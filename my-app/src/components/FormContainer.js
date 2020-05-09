@@ -11,7 +11,7 @@ class Form extends Component {
     isKosher: false,
     isLactoseFree: false,
   };
-  //! Removing constructor
+  //! Removing constructor --
   /*
   
   constructor() {
