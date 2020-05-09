@@ -1,6 +1,19 @@
 import React, { Component } from "react";
 import FormComponent from "./FormComponent";
 class Form extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    age: "",
+    gender: "",
+    destination: "",
+    isVegan: false,
+    isKosher: false,
+    isLactoseFree: false,
+  };
+  //! Removing constructor
+  /*
+  
   constructor() {
     super();
     this.state = {
@@ -13,10 +26,11 @@ class Form extends Component {
       isKosher: false,
       isLactoseFree: false,
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+*/
+  //! with Arrow function I dont need to bind the function
+  handleChange = (event) => {
     const { name, value, type, checked } = event.target;
     type === "checkbox"
       ? this.setState({
@@ -25,7 +39,7 @@ class Form extends Component {
       : this.setState({
           [name]: value,
         });
-  }
+  };
 
   render() {
     return <FormComponent handleChange={this.handleChange} data={this.state} />;
